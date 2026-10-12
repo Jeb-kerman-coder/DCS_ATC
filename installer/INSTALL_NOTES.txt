@@ -1,0 +1,26 @@
+DCS ATC is installed.
+
+BEFORE FIRST USE
+  1. Install Ollama (https://ollama.com) if you don't have it, then run
+         ollama pull gemma3:12b
+     in a command prompt. The ATC and wingman wording come from this model.
+     (A smaller model such as gemma3:4b is faster if DCS uses most of your
+     VRAM - set it in %APPDATA%\DCS ATC\settings.json.)
+  2. Start DCS ATC once. It puts a small loader into your DCS
+     Saved Games folder, so the bridge script starts by itself in every
+     mission - nothing to add in the Mission Editor. Restart DCS if it
+     was already running.
+  3. DCS-BIOS (radio frequencies): if it isn't installed, the app offers
+     to download it from the official GitHub releases and set it up,
+     including the line in Export.lua.
+  4. DCS blocks sockets in mission scripts by default. Setup (and the app,
+     on every start) comments out three lines in
+     DCS World\Scripts\MissionScripting.lua to allow it - marked
+     "-- [DCS ATC]". DCS updates put them back; the app notices and offers
+     to fix it again. Uninstalling restores the original lines.
+     (This slightly relaxes DCS's mission sandbox - only run missions you
+     trust. To opt out, set dcs.auto_fix_mission_scripting to false in
+     %APPDATA%\DCS ATC\settings.json.)
+
+Your settings, recordings and log are kept in  %APPDATA%\DCS ATC
+and are left alone when you update or uninstall.

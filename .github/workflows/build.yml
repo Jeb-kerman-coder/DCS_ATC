@@ -1,0 +1,59 @@
+# Builds DCS_ATC_Setup.exe on a Windows runner.
+#   * push a tag like v1.0.0  -> builds and attaches the installer to a GitHub Release
+#   * "Run workflow" button   -> builds and keeps the installer as a downloadable artifact
+name: Build installer
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Quick tests (no heavy dependencies needed)
+        shell: bash
+        run: |
+          for t in channels paths dcs_hook mission_scripting dcs_bios_setup; do
+            python tests/test_$t.py
+          done
+
+      - name: Install Inno Setup
+        shell: pwsh
+        run: choco install innosetup -y --no-progress
+
+      - name: Work out the version
+        shell: pwsh
+        run: |
+          $version = "0.0.0"
+          if ($env:GITHUB_REF -like "refs/tags/v*") { $version = $env:GITHUB_REF_NAME.TrimStart("v") }
+          "APP_VERSION=$version" | Out-File -FilePath $env:GITHUB_ENV -Append
+
+      - name: Build exe + installer
+        shell: cmd
+        run: build_installer.bat
+
+      - name: Keep the installer as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DCS_ATC_Setup
+          path: installer_output/DCS_ATC_Setup.exe
+
+      - name: Attach to the release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: installer_output/DCS_ATC_Setup.exe
+          generate_release_notes: true

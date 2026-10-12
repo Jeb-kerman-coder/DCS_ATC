@@ -1,0 +1,8 @@
+numpy
+scipy
+sounddevice
+soundfile
+pygame
+faster-whisper
+ollama
+piper-tts

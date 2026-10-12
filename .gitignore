@@ -1,0 +1,29 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+.build-venv/
+
+# build output
+build/
+dist/
+installer_output/
+
+# large downloads (fetched by fetch_models.py / build_installer.bat)
+models/
+*.onnx
+*.onnx.json
+
+# runtime files written next to the code when run from source
+settings.json
+log.txt
+log_previous.txt
+log_missionscripting.txt
+recordings/
+tts/
+
+# editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

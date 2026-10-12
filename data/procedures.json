@@ -1,0 +1,143 @@
+{
+    "TOWER": {
+        "STARTUP_REQUEST": {
+            "controller_action": "START_APPROVED",
+            "response_data": {
+                "acknowledge_callsign": true
+            }
+        },
+
+        "RADIO_CHECK": {
+            "controller_action": "RADIO_CHECK",
+            "response_data": {
+                "acknowledge_callsign": true
+            }
+        },
+
+        "TAXI_REQUEST": {
+            "controller_action": "TAXI_CLEARANCE",
+            "response_data": {
+                "acknowledge_callsign": true
+            }
+        },
+
+        "TAKEOFF_REQUEST": {
+            "controller_action": "TAKEOFF_CLEARANCE",
+            "response_data": {
+                "acknowledge_callsign": true
+            }
+        },
+
+        "INBOUND_REQUEST": {
+            "controller_action": "INBOUND",
+            "response_data": {
+                "acknowledge_callsign": true
+            }
+        },
+
+        "LANDING_REQUEST": {
+            "controller_action": "LANDING_CLEARANCE",
+            "response_data": {
+                "acknowledge_callsign": true
+            }
+        }
+    },
+
+    "AWACS": {
+        "BOGEY_DOPE_REQUEST": {
+            "controller_action": "REPORT_BRAA",
+            "response_data": {
+                "report_bearing": true,
+                "report_range": true,
+                "report_altitude": true,
+                "use_military_brevity": true
+            }
+        },
+
+        "RADIO_CHECK": {
+            "controller_action": "RADIO_CHECK",
+            "response_data": {
+                "acknowledge_callsign": true
+            }
+        },
+
+        "PICTURE_REQUEST": {
+            "controller_action": "PICTURE",
+            "response_data": {
+                "use_military_brevity": true
+            }
+        },
+
+        "ON_STATION_REQUEST": {
+            "controller_action": "ON_STATION",
+            "response_data": {
+                "acknowledge_callsign": true,
+                "use_military_brevity": true
+            }
+        },
+
+        "CHECK_IN_REQUEST": {
+            "controller_action": "CHECK_IN",
+            "response_data": {
+                "acknowledge_callsign": true,
+                "use_military_brevity": true
+            }
+        }
+    },
+
+    "GCI": {
+        "RADIO_CHECK": {
+            "controller_action": "RADIO_CHECK",
+            "response_data": {
+                "acknowledge_callsign": true
+            }
+        },
+
+        "PICTURE_REQUEST": {
+            "controller_action": "PICTURE",
+            "response_data": {
+                "use_military_brevity": true
+            }
+        },
+
+        "BOGEY_DOPE_REQUEST": {
+            "controller_action": "REPORT_BRAA",
+            "response_data": {
+                "report_bearing": true,
+                "report_range": true,
+                "report_altitude": true,
+                "use_military_brevity": true
+            }
+        },
+
+        "VECTOR_REQUEST": {
+            "controller_action": "VECTOR",
+            "response_data": {
+                "use_military_brevity": true
+            }
+        },
+
+        "INTERCEPT_REQUEST": {
+            "controller_action": "INTERCEPT",
+            "response_data": {
+                "use_military_brevity": true
+            }
+        },
+
+        "ON_STATION_REQUEST": {
+            "controller_action": "ON_STATION",
+            "response_data": {
+                "acknowledge_callsign": true,
+                "use_military_brevity": true
+            }
+        },
+
+        "CHECK_IN_REQUEST": {
+            "controller_action": "CHECK_IN",
+            "response_data": {
+                "acknowledge_callsign": true,
+                "use_military_brevity": true
+            }
+        }
+    }
+}
