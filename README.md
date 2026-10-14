@@ -3,6 +3,8 @@
 ### [⬇ Download the installer](../../releases/latest)
 Get **`DCS_ATC_Setup.exe`** from the latest release and run it - no Python, no building. (The rest of this page is for developers.)
 
+Installation Tutorial: https://youtu.be/nb0dCKNpnnQ
+
 ---
 
 Voice-controlled **ATC, AWACS / GCI and an AI wingman** for [DCS World](https://www.digitalcombatsimulator.com/).
